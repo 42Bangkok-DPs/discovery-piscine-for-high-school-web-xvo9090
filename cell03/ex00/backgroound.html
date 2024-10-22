@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="backgroound.css">
+<button onclick="Change()">change background color</button>
+<script>
+    function Change(){
+        const colors = ['red', 'blue', 'green', 'yellow','pink','purple','white','black','orange','lime','brown'];
+        const random = Math.floor(Math.random() * colors.length);
+        document.body.style.backgroundColor = colors[random];
+    }
+</script>

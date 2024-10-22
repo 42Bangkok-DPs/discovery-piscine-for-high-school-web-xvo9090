@@ -1,0 +1,9 @@
+body{
+    width: auto;
+    height: auto;
+}
+
+button{
+    border: none;
+    display: flex  ;
+}
