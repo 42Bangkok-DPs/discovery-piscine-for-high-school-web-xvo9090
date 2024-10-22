@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            body{
+                align-content: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                
+            }
+            .blln{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                border-radius: 100px;
+                border: 0;
+                cursor: pointer;
+                transition: width 0.1s, height 0.1s;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="blln" onclick="Pump()"></button>
+        <script>
+            let color = 0;
+            const colors = ['red', 'green', 'blue'];
+
+            function Pump(){
+                const balloon = document.querySelector('.blln');
+                const currentWidth = balloon.offsetWidth;
+                const currentHeight = balloon.offsetHeight;
+
+                if (currentWidth > 420){
+                    balloon.style.width = '200px';
+                    balloon.style.height = '200px';
+                    balloon.style.borderRadius = '100px';
+                    color = 0;
+                }
+                else{
+                const newWidth = currentWidth + 10;
+                const newHeight = currentHeight + 10;
+
+                balloon.style.width = newWidth + 'px';
+                balloon.style.height = newHeight + 'px';
+                balloon.style.borderRadius = (newWidth / 2) + 'px';
+
+                color = (color + 1) % colors.length;
+                balloon.style.backgroundColor = colors[color];
+                
+                }
+            }
+            
+        </script>
+    </body>
+</html>
